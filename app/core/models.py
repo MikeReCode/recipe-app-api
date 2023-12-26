@@ -63,6 +63,7 @@ class Recipe(models.Model):
     def __str__(self) -> str:
         return self.title
 
+
 class Tag(models.Model):
     """Tags for filtering recipes"""
     name = models.CharField(max_length=225)

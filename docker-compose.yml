@@ -20,6 +20,7 @@ services:
       - DB_NAME=devdb
       - DB_USER=devuser
       - DB_PASS=changeme # all this values should match the values from the db service
+      - DEBUG=1
     depends_on:
       - db
 

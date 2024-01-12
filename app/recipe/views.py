@@ -17,6 +17,7 @@ from rest_framework.permissions import IsAuthenticated
 from core.models import Recipe, Tag, Ingredient
 from recipe import serializers
 
+
 @extend_schema_view(
     list=extend_schema(
         parameters=[
@@ -33,8 +34,6 @@ from recipe import serializers
         ]
     )
 )
-
-
 class RecipeViewSet(viewsets.ModelViewSet):
     """View for manage recipe APIs"""
     serializer_class = serializers.RecipeDetailSerializer
@@ -85,6 +84,7 @@ class RecipeViewSet(viewsets.ModelViewSet):
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
 @extend_schema_view(
     list=extend_schema(
         parameters=[
@@ -107,7 +107,9 @@ class BaseRecipeAttrViewSet(
 
     def get_queryset(self):
         """Filter queryset to authenticated user"""
-        assigned_only = bool(int(self.request.query_params.get('assigned_only', 0)))
+        assigned_only = bool(
+            int(self.request.query_params.get('assigned_only', 0))
+            )
         queryset = self.queryset
         if assigned_only:
             queryset = queryset.filter(recipe__isnull=False)

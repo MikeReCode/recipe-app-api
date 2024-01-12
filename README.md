@@ -23,7 +23,7 @@ To facilitate testing, you can use the following credentials:
 
 ## Generating Authentication Token
 
-1. **Login:** Navigate to the [Swagger documentation](https://example.com/api/docs) and locate the `POST /api/user/token/` endpoint under the "User" section.
+1. **Login:** Navigate to the [Swagger documentation](http://ec2-54-224-136-90.compute-1.amazonaws.com/api/docs) and locate the `POST /api/user/token/` endpoint under the "User" section.
 
 2. **Try it out:** Click on the "Try it out" button for the `POST /api/user/token/` endpoint.
 

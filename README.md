@@ -1,35 +1,42 @@
 # Recipe API Project
 
-
 ## Introduction
 
 Welcome to the Recipe API project! This API allows you to manage recipes, ingredients, tags, and user information. You can interact with the API through various endpoints to perform actions such as retrieving recipes, updating ingredients, managing tags, and more.
 
- **Technical Stack:** Developed with Python and Django Rest Framework (DRF), the backend utilizes a PostgreSQL database for data integrity. Docker containers separate the application, database, and Nginx server, providing scalability and efficient deployment.
+**Technical Stack:** Developed with Python and Django Rest Framework (DRF), the backend utilizes a PostgreSQL database for data integrity. Docker containers separate the application, database, and Nginx server, providing scalability and efficient deployment.
 
-**Deployment:** The entire project is hosted on an AWS EC2 instance, leveraging Docker's containerization benefits.
+## Local Deployment with Docker
+
+To deploy the Recipe API locally using Docker, follow these steps:
+
+1. **Clone Repository**: Clone the Recipe API repository from GitHub to your local machine.
+
+2. **Navigate to Project Directory**: Open a terminal and navigate to the root directory of the cloned repository.
+
+3. **Build Docker Containers**: Run the following command to build the Docker containers: `docker-compose up --build`
 
 
 ## API Documentation
 
-The detailed documentation for the API can be found at [ec2-54-224-136-90.compute-1.amazonaws.com/api/docs](http://ec2-54-224-136-90.compute-1.amazonaws.com/api/docs). This Swagger documentation provides comprehensive information about the available endpoints, request methods, request parameters, and response structures.
+The detailed documentation for the API can be found at `GET /api/docs` . This Swagger documentation provides comprehensive information about the available endpoints, request methods, request parameters, and response structures.
 
-## Testing Credentials
+## Creating a User
 
-To facilitate testing, you can use the following credentials:
+To create a user for testing purposes, use the following endpoint:
 
-- **Username:** user1@example.com
-- **Password:** 12345678
+- **POST** `/api/user/create/`
+
+Provide the required information such as email and password in the request body to register a new user.
+
 
 ## Generating Authentication Token
 
-1. **Login:** Navigate to the [Swagger documentation](http://ec2-54-224-136-90.compute-1.amazonaws.com/api/docs) and locate the `POST /api/user/token/` endpoint under the "User" section.
+1. **Login:** Navigate to the Swagger documentation`GET /api/docs` and locate the `POST /api/user/token/` endpoint under the "User" section.
 
 2. **Try it out:** Click on the "Try it out" button for the `POST /api/user/token/` endpoint.
 
-3. **Enter Credentials:** In the "Request body" section, enter the following credentials:
-   - **email:** user1@example.com
-   - **password:** 12345678
+3. **Enter Credentials:** In the "Request body" section, enter the user credentials created previously.
 
 4. **Execute:** Click the "Execute" button to send the request.
 
